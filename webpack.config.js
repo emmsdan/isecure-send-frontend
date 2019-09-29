@@ -7,7 +7,7 @@ module.exports = {
     main: path.resolve(__dirname, "src") + "/index.jsx"
   },
   resolve: {
-    extensions: ['.js', '.jsx']
+    extensions: [".js", ".jsx"]
   },
   module: {
     rules: [

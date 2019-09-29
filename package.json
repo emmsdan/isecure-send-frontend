@@ -3,21 +3,38 @@
   "version": "1.0.0",
   "main": "index.jsx",
   "repository": "https://github.com/emmsdan/isecure-send-frontend",
-  "author": "Emmanuel Daniel <ecomje@gmail.com>",
+  "author": "Emmanuel Daniel <emmsdan.inc@gmail.com>",
   "license": "MIT",
   "scripts": {
     "build": "webpack --mode production",
     "dev": "webpack-dev-server --open --hot --mode development",
-    "start": "node dist/main.js"
+    "start": "node dist/main.js",
+    "lint": "eslint src/*.js* --fix"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "eslint src/*.js* && pretty-quick --staged"
+    }
   },
   "devDependencies": {
     "@babel/core": "^7.6.2",
     "@babel/preset-env": "^7.6.2",
     "@babel/preset-react": "^7.0.0",
+    "D": "^1.0.0",
+    "babel-eslint": "^10.0.3",
     "babel-loader": "^8.0.6",
+    "eslint": "^6.5.0",
+    "eslint-config-prettier": "^6.3.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-prettier": "^3.1.1",
+    "eslint-plugin-react": "^7.14.3",
+    "eslint-plugin-react-hooks": "^2.1.1",
     "html-loader": "^0.5.5",
     "html-webpack-plugin": "^3.2.0",
+    "husky": "^3.0.5",
     "node-sass": "^4.12.0",
+    "prettier": "^1.18.2",
+    "pretty-quick": "^1.11.1",
     "prop-types": "^15.7.2",
     "sass-loader": "^8.0.0",
     "webpack": "^4.41.0",
