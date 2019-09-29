@@ -6,7 +6,6 @@ import App from "./App";
 const Routing = (
   <Router>
     <div>
-      sss
       <Route path="/" component={App} />
     </div>
   </Router>
