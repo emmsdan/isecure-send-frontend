@@ -1,3 +1,8 @@
+$text-light: #a4c8e0;
+$text-dark: #226699;
+$button-light: #226699;
+$light: #ffffff;
+
 @mixin rings($duration, $delay) {
   opacity: 0;
   display: flex;
@@ -43,7 +48,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  opacity: 0.4;
+  cursor: pointer;
 }
 
 .logo {
@@ -52,9 +57,10 @@
 }
 
 .ripple {
-  @include rings(3s, 0.5s);
+  opacity: 0.2;
+  @include rings(1s, 0.5s);
   position: absolute;
-  border: 3px solid #a4c8e0;
+  border: 3px solid $text-light;
   border-radius: 50%;
   z-index: -1000;
   width: 300px;
@@ -86,20 +92,34 @@
   width: 30vh;
   border-radius: 100%;
   background: #ffffff;
-  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.25);
+  // box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.25);
 
-  span {
-    position: relative;
-    font-size: 72px;
-    top: 5px;
-    left: -5px;
+  .content {
+    text-align: center;
+    width: 400px;
+
+    .icon {
+      font-size: 5rem;
+      color: $text-dark;
+      opacity: 0.5;
+    }
+    h2 {
+      margin: 0 auto 20px auto;
+      opacity: 0.4;
+    }
+    .button {
+      font-size: 12px !important;
+      background: $text-dark;
+      background: $button-light;
+      box-shadow: 0px 0px 24px $button-light;
+      color: $light;
+    }
   }
-
   &::after {
-    @include rings(3s, 0s);
+    @include rings(1s, 0s);
   }
 
   &::before {
-    @include rings(3s, 0.5s);
+    @include rings(1s, 0.5s);
   }
 }
