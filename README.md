@@ -12,7 +12,7 @@ It has just three main feature:
 
 but you can contribute to it by just raising a PR.
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/d0992ff1-6656-49bc-b9bc-d0a4da9306d9/deploy-status)](https://app.netlify.com/sites/secure-share/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/8e9c03ae-1ceb-4499-a97b-da270ca82104/deploy-status)](https://app.netlify.com/sites/secure-share/deploys)
 
 ## INFO
 

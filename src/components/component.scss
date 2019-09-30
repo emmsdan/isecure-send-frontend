@@ -1,0 +1,38 @@
+$text-light: #a4c8e0;
+$text-dark: #226699;
+$button-light: #226699;
+$light: #ffffff;
+
+.file-icon {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+}
+.avater {
+  background: $button-light !important;
+}
+.default-text {
+  color: $button-light !important;
+}
+
+input,
+.select,
+.input {
+  border-color: $text-light !important;
+  color: $button-light !important;
+}
+.select {
+  border-radius: 4px;
+  border: 1px solid #ced4da;
+  padding: 10px 26px 10px 12px;
+}
+
+.button {
+  font-size: 12px !important;
+  // background: $text-dark;
+  background: $button-light !important;
+  box-shadow: 0px 0px 24px $button-light !important;
+  color: $light !important;
+  margin: 10px auto !important;
+  padding-top: 15px !important;
+  padding-bottom: 15px !important;
+}

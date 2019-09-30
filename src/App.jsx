@@ -5,6 +5,9 @@ import CloudUploadIcon from "@material-ui/icons/CloudUpload";
 import Button from "@material-ui/core/Button";
 import logo from "./assets/logo.png";
 import "./App.scss";
+import FormDialog from "./components/FormUpload";
+import ListUploadFIle from "./components/ListUploadFIle";
+import UploadForm from "./components/UploadForm";
 
 const App = () => {
   const onDrop = useCallback(acceptedFiles => {
@@ -32,9 +35,14 @@ const App = () => {
     border: isDragActive ? "2px solid red" : "",
     background: isDragActive ? "#f3010149" : ""
   };
-
+  const props = {
+    formField: <UploadForm />,
+    files: <ListUploadFIle />,
+    isOpened: true
+  };
   return (
     <div style={styles} className="backOver">
+      <FormDialog {...props} />
       <img alt="secure-sharer" src={logo} className="logo" />
       <div className="main" {...getRootProps()}>
         <div className="download-background">
