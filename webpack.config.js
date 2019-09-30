@@ -30,18 +30,24 @@ module.exports = {
           {
             loader: "css-loader",
             options: {
-              discardDuplicates: true,
-              importLoaders: 1,
-              modules: true,
-              localIdentName: "emmsdan__[name]__[local]___[hash:base64:5]",
               sourceMap: process.env.NODE_ENV !== "production"
             }
           },
           {
             loader: "sass-loader",
             options: {
-              // set sourceMap to "false" on production "true" other wise
               sourceMap: process.env.NODE_ENV !== "production"
+            }
+          }
+        ]
+      },
+      {
+        test: /\.(png|jp(e*)g|svg|gif|ttf|woff|woff2|eot)$/,
+        use: [
+          {
+            loader: "file-loader",
+            options: {
+              name: "images/[hash]-[name].[ext]"
             }
           }
         ]
