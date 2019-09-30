@@ -1,15 +1,42 @@
-import React, { useRef } from "react";
+import React, { useCallback } from "react";
+import { useDropzone } from "react-dropzone";
+
 import CloudUploadIcon from "@material-ui/icons/CloudUpload";
 import Button from "@material-ui/core/Button";
 import logo from "./assets/logo.png";
 import "./App.scss";
 
 const App = () => {
-  const inputFileRef = useRef(null);
+  const onDrop = useCallback(acceptedFiles => {
+    const reader = new FileReader();
+
+    reader.onabort = () => console.log("file reading was aborted");
+    reader.onerror = () => console.log("file reading has failed");
+    reader.onload = () => {
+      // Do whatever you want with the file contents
+      // const binaryStr = reader.result;
+      // console.log(binaryStr);
+    };
+
+    acceptedFiles.forEach((file, i) => {
+      console.log("file: ", i + 1);
+      // reader.readAsBinaryString(file);
+    });
+  }, []);
+
+  const { getRootProps, getInputProps, isDragActive } = useDropzone({
+    onDrop
+  });
+  const background = { background: isDragActive ? "#f30101" : "" };
+  const styles = {
+    border: isDragActive ? "2px solid red" : "",
+    background: isDragActive ? "#f3010149" : ""
+  };
+
   return (
-    <React.Fragment>
+    <div style={styles} className="backOver">
       <img alt="secure-sharer" src={logo} className="logo" />
-      <div className="main" onClick={() => inputFileRef.current.click()}>
+      <div className="main" {...getRootProps()}>
         <div className="download-background">
           <span></span>
           <div className="content">
@@ -19,12 +46,12 @@ const App = () => {
             <Button
               variant="contained"
               size="large"
+              style={background}
               className="button"
-              onClick={() => inputFileRef.current.click()}
             >
               SELECT FILE
             </Button>
-            <input ref={inputFileRef} type="file" style={{ display: "none" }} />
+            <input {...getInputProps()} />
           </div>
         </div>
         <div className="ripple"></div>
@@ -32,7 +59,7 @@ const App = () => {
         <div className="ripple"></div>
         <div className="ripple"></div>
       </div>
-    </React.Fragment>
+    </div>
   );
 };
 

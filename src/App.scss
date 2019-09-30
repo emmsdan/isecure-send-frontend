@@ -39,6 +39,13 @@ $light: #ffffff;
   }
 }
 
+.backOver {
+  position: absolute;
+  height: 97%;
+  width: 98%;
+  top: 10px;
+  left: 10px;
+}
 .main {
   position: absolute;
   top: 10%;
@@ -49,6 +56,7 @@ $light: #ffffff;
   justify-content: center;
   align-items: center;
   cursor: pointer;
+  overflow: hidden;
 }
 
 .logo {
